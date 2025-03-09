@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://dfw85ofrp6qhh"]
+
+[ext_resource type="AudioStream" uid="uid://drj0itw76p5sr" path="res://Resources/Audio/Player/shock_01.mp3" id="1_pbbsv"]
+[ext_resource type="AudioStream" uid="uid://c5sn4plua62l1" path="res://Resources/Audio/Player/shock_02.mp3" id="2_e732v"]
+[ext_resource type="AudioStream" uid="uid://b80v0wq5u7n8f" path="res://Resources/Audio/Player/shock_03.mp3" id="3_gfwlv"]
+
+[resource]
+random_pitch = 1.1
+random_volume_offset_db = 2.34
+streams_count = 3
+stream_0/stream = ExtResource("1_pbbsv")
+stream_1/stream = ExtResource("2_e732v")
+stream_2/stream = ExtResource("3_gfwlv")

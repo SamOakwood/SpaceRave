@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://24nrjilgc3o5"]
+
+[ext_resource type="Script" uid="uid://cjv0ha2nf7t1s" path="res://Source/world/elements/platform.gd" id="1_l7l5j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sfec4"]
+size = Vector3(10, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l7l5j"]
+size = Vector3(10, 3.471, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7l5j"]
+transparency = 1
+albedo_color = Color(0.348445, 0.536223, 0.842206, 0.0823529)
+
+[node name="Platform" type="StaticBody3D"]
+script = ExtResource("1_l7l5j")
+
+[node name="VisualMesh" type="CSGBox3D" parent="."]
+size = Vector3(10, 0.1, 5)
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_sfec4")
+
+[node name="GravArea" type="Area3D" parent="." groups=["EngageGravArea"]]
+
+[node name="GravShape" type="CollisionShape3D" parent="GravArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73206, 0)
+shape = SubResource("BoxShape3D_l7l5j")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73296, 0)
+size = Vector3(10, 3.471, 5)
+material = SubResource("StandardMaterial3D_l7l5j")

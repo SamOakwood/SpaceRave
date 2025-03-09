@@ -1,0 +1,476 @@
+[gd_scene load_steps=3 format=3 uid="uid://b116gjlpfwt4k"]
+
+[ext_resource type="ArrayMesh" uid="uid://dyx04k0f7iw6s" path="res://Resources/models/World/elements/crate.res" id="1_j8t8c"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j8t8c"]
+points = PackedVector3Array(-0.841711, -0.326543, -0.609689, -0.875421, -0.326527, -0.575979, -0.833646, 0.476786, -0.469968, 0.967183, 0.34333, -0.469888, 0.830114, -0.488369, 0.461917, -0.830155, -0.355338, 0.594907, 0.83677, -0.49223, -0.438455, 0.836653, 0.478562, 0.465185, -0.836681, 0.478547, 0.465172, -0.83679, -0.49221, -0.438434, 0.833642, 0.34332, -0.603438, -1, -0.0535495, 0.15622, 0.833674, 0.476834, -0.469892, 0.963105, -0.35536, 0.461935, 0.164007, 0.23929, 0.686793, -0.830143, -0.488354, 0.461903, 0.841687, -0.326555, -0.609713, 0.830127, -0.355349, 0.594924, -0.833673, 0.343309, -0.603418, -0.967043, 0.343335, -0.470022, -0.836648, 0.344559, 0.599193, 0.970638, 0.344581, 0.465181, 0.976522, -0.326566, -0.474878, -0.976384, -0.326572, -0.475016, -0.97057, 0.344612, 0.465218, 0.836619, 0.34457, 0.59921, -0.963037, -0.355391, 0.461972, 1, 0.0400407, 0.156106, -0.164051, 0.239273, 0.686749, -0.793056, -0.486058, -0.465342, -1, 0.0400381, -0.156102, 0.53584, 0.479032, -0.472368)
+
+[node name="VoidPlatform" type="Node3D"]
+
+[node name="Crate" type="RigidBody3D" parent="."]
+transform = Transform3D(0.866011, 0.397073, 0.303905, 0.000785368, 0.606698, -0.794932, -0.500024, 0.688658, 0.525096, -1.3427, -2.46278, 1.03063)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate2" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.603745, 0.633989, 0.483269, 0.000785368, 0.606698, -0.794932, -0.797177, -0.479557, -0.366789, -3.75774, -0.791022, -3.54412)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate2"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate2"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate3" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.845228, -0.424413, -0.324751, 0.000785392, 0.606698, -0.794932, 0.534405, -0.672154, -0.512465, -12.4093, -3.41306, 1.68808)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate3"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate3"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate18" type="RigidBody3D" parent="."]
+transform = Transform3D(0.372771, -0.737814, -0.562737, 0.000785392, 0.606698, -0.794932, 0.927923, 0.295886, 0.226739, -12.4093, 2.03722, 4.38033)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate18"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate18"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate4" type="RigidBody3D" parent="."]
+transform = Transform3D(0.0115621, -0.618687, 0.785553, 0.629901, -0.605627, -0.486252, 0.77659, 0.500443, 0.382709, -18.1601, -1.80747, -2.64553)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate4"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate4"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate5" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.610272, -0.773193, 0.172453, -0.0290539, -0.195699, -0.980233, 0.791659, -0.60322, 0.0969656, -26.7261, -1.80747, -5.7373)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate5"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate5"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate6" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.230633, -0.148089, 0.961706, -0.565761, -0.783706, -0.256358, 0.791659, -0.60322, 0.0969656, -29.6103, -4.08265, -0.106453)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate6"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate6"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate7" type="RigidBody3D" parent="."]
+transform = Transform3D(0.579157, 0.203135, -0.789502, -0.418291, -0.757204, -0.501672, -0.699722, 0.620788, -0.35357, -37.8451, -0.108406, 3.13328)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate7"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate7"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate8" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.6813, 0.626827, -0.378045, -0.699952, -0.709013, 0.085835, -0.214235, 0.323093, 0.921799, -47.5782, -0.108406, -2.09684)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate8"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate8"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate9" type="RigidBody3D" parent="."]
+transform = Transform3D(0.40692, -0.494686, -0.76792, 0.511273, -0.573312, 0.640244, -0.756978, -0.653145, 0.019628, -39.4597, -4.24039, -7.74151)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate9"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate9"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate10" type="RigidBody3D" parent="."]
+transform = Transform3D(0.40692, -0.494686, -0.76792, 0.511273, -0.573312, 0.640244, -0.756978, -0.653145, 0.019628, -19.0899, -4.24039, 8.88996)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate10"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate10"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate11" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.60032, 0.683265, -0.415649, 0.258068, -0.32642, -0.909313, -0.756978, -0.653145, 0.019628, -11.0985, 1.22172, -12.4051)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate11"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate11"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate12" type="RigidBody3D" parent="."]
+transform = Transform3D(0.0457989, -0.0829957, -0.995497, 0.651833, -0.75267, 0.0927394, -0.756978, -0.653145, 0.019628, 8.38713, 1.22172, -1.48216)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate12"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate12"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate13" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.492731, -0.327378, 0.806251, 0.816405, -0.494583, 0.298112, 0.301163, 0.805115, 0.510969, 8.38713, -1.7517, 3.30121)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate13"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate13"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate14" type="RigidBody3D" parent="."]
+transform = Transform3D(0.505381, 0.259344, 0.823001, 0.506855, -0.861107, -0.039893, 0.698347, 0.437304, -0.566637, 11.398, -1.7517, -11.2307)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate14"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate14"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate15" type="RigidBody3D" parent="."]
+transform = Transform3D(0.0514336, -0.887022, 0.458854, 0.381808, 0.442023, 0.811689, -0.922809, 0.133446, 0.361407, 15.6402, -1.7517, -5.38174)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate15"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate15"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate16" type="RigidBody3D" parent="."]
+transform = Transform3D(0.534242, -0.132434, -0.834893, 0.295934, -0.895852, 0.33147, -0.791838, -0.424159, -0.43941, 20.678, -1.7517, 6.07631)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate16"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate16"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate17" type="RigidBody3D" parent="."]
+transform = Transform3D(0.176844, -0.279948, -0.943586, -0.495275, -0.853785, 0.160483, -0.850546, 0.438954, -0.289638, 25.0083, -5.18576, -2.63008)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate17"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate17"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate19" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.521849, -0.735479, -0.43214, -0.811167, 0.584612, -0.0154191, 0.263975, 0.342491, -0.901675, -1.3427, 3.09457, 2.09687)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate19"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate19"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate20" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.492056, -0.866187, 0.08718, -0.78674, 0.399567, -0.470517, 0.372722, -0.300109, -0.878073, -3.75774, 4.76633, -2.47788)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate20"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate20"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate21" type="RigidBody3D" parent="."]
+transform = Transform3D(0.337618, -0.863819, -0.373939, -0.941283, -0.309545, -0.134791, 0.000684109, 0.397491, -0.917606, -12.4093, 2.14429, 2.75432)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate21"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate21"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate22" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.764618, 0.627458, -0.147159, -0.270776, -0.105557, 0.956838, 0.584842, 0.771463, 0.250611, -12.4093, 7.59457, 5.44657)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate22"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate22"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate23" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.590753, 0.773448, 0.229758, -0.11143, -0.360238, 0.926181, 0.799121, 0.521543, 0.298997, -18.1601, 3.74988, -1.57929)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate23"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate23"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate24" type="RigidBody3D" parent="."]
+transform = Transform3D(0.394233, 0.726719, -0.562547, 0.311134, 0.470433, 0.825765, 0.864741, -0.500571, -0.0406465, -26.7261, 3.74988, -4.67106)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate24"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate24"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate25" type="RigidBody3D" parent="."]
+transform = Transform3D(0.683891, -0.41033, -0.60326, -0.705548, -0.161466, -0.690023, 0.185731, 0.897529, -0.399932, -29.6103, 1.4747, 3.50283)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate25"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate25"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate26" type="RigidBody3D" parent="."]
+transform = Transform3D(0.703386, -0.135265, -0.697819, -0.710209, -0.0934524, -0.69776, 0.0291698, 0.986392, -0.1618, -37.8451, 5.44895, 6.74257)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate26"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate26"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate27" type="RigidBody3D" parent="."]
+transform = Transform3D(0.504778, -0.764549, -0.400829, -0.842467, -0.335029, -0.421907, 0.188279, 0.550654, -0.813222, -47.5782, 5.44895, 1.51244)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate27"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate27"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate28" type="RigidBody3D" parent="."]
+transform = Transform3D(0.684985, 0.658292, -0.312166, -0.492759, 0.103004, -0.864048, -0.536641, 0.745682, 0.394935, -39.4597, 1.31697, -4.13223)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate28"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate28"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate29" type="RigidBody3D" parent="."]
+transform = Transform3D(0.662175, -0.380221, -0.645721, -0.681372, 0.0531126, -0.730008, 0.31186, 0.923369, -0.223902, -19.0899, 1.31697, 12.4992)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate29"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate29"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate30" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.904493, 0.425799, 0.0242137, -0.118498, -0.305445, 0.944808, 0.409694, 0.851703, 0.326729, -11.0985, 6.77907, -11.3389)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate30"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate30"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate31" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.373185, 0.353686, -0.857694, 0.927351, 0.169547, -0.333578, 0.0274374, -0.919869, -0.391263, 8.38713, 6.77907, -0.415919)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate31"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate31"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate32" type="RigidBody3D" parent="."]
+transform = Transform3D(0.627388, -0.00675873, -0.778678, 0.134646, 0.985842, 0.0999286, 0.766978, -0.16754, 0.619416, 8.38713, 3.80565, 4.36745)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate32"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate32"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate33" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.220379, -0.92185, -0.318787, -0.661018, -0.0991857, 0.743786, -0.717278, 0.374639, -0.587502, 11.398, 3.80565, -7.6214)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate33"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate33"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate34" type="RigidBody3D" parent="."]
+transform = Transform3D(0.963176, -0.00297912, 0.268853, -0.152709, -0.829064, 0.537897, 0.221294, -0.559146, -0.79899, 15.6402, 3.80565, -1.77246)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate34"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate34"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate35" type="RigidBody3D" parent="."]
+transform = Transform3D(0.501425, 0.834105, 0.229872, -0.284565, -0.0919121, 0.954241, 0.817065, -0.543894, 0.191271, 20.678, 3.80565, 7.14256)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate35"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate35"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")
+
+[node name="Crate36" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.879679, -0.370601, -0.298027, -0.284565, -0.0919122, 0.954241, -0.381034, 0.924233, -0.024607, 25.0083, 0.371589, -1.56384)
+mass = 50.0
+gravity_scale = 0.0
+sleeping = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crate36"]
+shape = SubResource("ConvexPolygonShape3D_j8t8c")
+
+[node name="Crate" type="MeshInstance3D" parent="Crate36"]
+mesh = ExtResource("1_j8t8c")
+skeleton = NodePath("../..")

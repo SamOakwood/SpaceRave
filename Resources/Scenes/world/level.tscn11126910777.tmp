@@ -1,0 +1,140 @@
+[gd_scene load_steps=20 format=3 uid="uid://cg4ewun4b3hdi"]
+
+[ext_resource type="Script" uid="uid://dtek4f6ory0nn" path="res://Source/world/level.gd" id="1_ragav"]
+[ext_resource type="Texture2D" uid="uid://cu7ydyjk3hlvr" path="res://Resources/Textures/ringed_gas_giant_planet.png" id="2_dlnn4"]
+[ext_resource type="PackedScene" uid="uid://c7e3gqyd0nmxu" path="res://Resources/Scenes/player/player.tscn" id="4_dlbfl"]
+[ext_resource type="AudioStream" uid="uid://dc0xy6du6q53a" path="res://Resources/Audio/Music/Music1.mp3" id="5_dlnn4"]
+[ext_resource type="AudioStream" uid="uid://dy6fo5dp44vws" path="res://Resources/Audio/Music/Music2.mp3" id="6_f1l1s"]
+[ext_resource type="AudioStream" uid="uid://bm1k7qkk257em" path="res://Resources/Audio/Music/Music3.mp3" id="7_6jfk0"]
+[ext_resource type="PackedScene" uid="uid://bxi77q3gf2hjy" path="res://Resources/Scenes/world/elements/fractured_floor_platform.tscn" id="8_dlnn4"]
+[ext_resource type="AudioStream" uid="uid://4m41r7n1cdfw" path="res://Resources/Audio/Music/Music4.mp3" id="8_ftejf"]
+[ext_resource type="PackedScene" uid="uid://b116gjlpfwt4k" path="res://Resources/Scenes/world/elements/void_platform.tscn" id="9_f1l1s"]
+[ext_resource type="PackedScene" uid="uid://bypuhgq6787t1" path="res://Resources/Scenes/world/elements/wall_panel_platform.tscn" id="10_6jfk0"]
+[ext_resource type="PackedScene" uid="uid://mqcbteqmd5nc" path="res://Resources/Scenes/world/elements/door_panel_platform.tscn" id="11_ftejf"]
+[ext_resource type="PackedScene" uid="uid://0ru10ntmpmmu" path="res://Resources/Scenes/world/elements/floor_platform.tscn" id="12_d2ohv"]
+[ext_resource type="PackedScene" uid="uid://dflvr3d8b7ebw" path="res://Resources/Scenes/world/enemy/enemy_ufo.tscn" id="13_1xuon"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_87pn6"]
+panorama = ExtResource("2_dlnn4")
+filter = false
+energy_multiplier = 0.7
+
+[sub_resource type="Sky" id="Sky_ragav"]
+sky_material = SubResource("PanoramaSkyMaterial_87pn6")
+
+[sub_resource type="Environment" id="Environment_dlbfl"]
+background_mode = 2
+sky = SubResource("Sky_ragav")
+glow_enabled = true
+glow_intensity = 1.37
+glow_bloom = 0.18
+glow_hdr_threshold = 0.2
+fog_enabled = true
+fog_light_color = Color(0.0926142, 0.104746, 0.12382, 1)
+fog_sky_affect = 0.203
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_dlbfl"]
+shuffle = true
+fade_time = 0.5
+stream_count = 4
+stream_0 = ExtResource("8_ftejf")
+stream_1 = ExtResource("5_dlnn4")
+stream_2 = ExtResource("6_f1l1s")
+stream_3 = ExtResource("7_6jfk0")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1xuon"]
+radius = 9.323
+
+[sub_resource type="Curve3D" id="Curve3D_d2ohv"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.512572, -1.52428, 1.12542, 0, 0, 0, 0, 0, 0, -1.32025, -1.33749, -43.8221, 0, 0, 0, 0, 0, 0, -5.34667, -2.08318, -63.7062, 0, 0, 0, 0, 0, 0, 0.930707, 1.09699, -91.7887, 0, 0, 0, 0, 0, 0, -3.94174, 22.9745, -203.149, 0, 0, 0, 0, 0, 0, -4.06271, 45.6963, -245.667, 0, 0, 0, 0, 0, 0, -0.960458, 80.7212, -254.868, 0, 0, 0, 0, 0, 0, 5.51097, 106.138, -264.76, 0, 0, 0, 0, 0, 0, 6.3824, 122.579, -296.286, 0, 0, 0, 0, 0, 0, -73.0124, 123.292, -367.32, 0, 0, 0, 0, 0, 0, -219.296, 130.384, -452.741),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 11
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_ragav")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dlbfl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.966219, 1.12654e-08, -0.257723, 0.257723, -4.22348e-08, 0.966219, 0, -1, -4.37114e-08, 0, 4, 0)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.901417, -1.89249e-08, 0.432951, -0.432951, 3.94022e-08, -0.901417, 2.59592e-15, -1, -4.37114e-08, 0, 4, 0)
+
+[node name="Player" parent="." instance=ExtResource("4_dlbfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75465, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamPlaylist_dlbfl")
+volume_db = -15.0
+autoplay = true
+
+[node name="Platforms" type="Node3D" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("8_dlnn4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.426637, -1.3895, -7.76838)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("8_dlnn4")]
+transform = Transform3D(0.0466183, 0, 0.998913, 0.981418, 0.186335, -0.0458019, -0.186133, 0.982486, 0.00868665, -1.96368, 74.8856, -253.766)
+
+[node name="VoidPlatform" parent="Platforms" instance=ExtResource("9_f1l1s")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0.207229, 0.978293, 9.05826e-09, -0.978293, 0.207229, -4.27625e-08, 2.73049, 13.1018, -154.422)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("10_6jfk0")]
+transform = Transform3D(0.36369, 0.844868, 0.392336, 3.96453e-08, 0.421178, -0.906978, -0.93152, 0.329859, 0.153178, -6.63526, 0, -63.6408)
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("11_ftejf")]
+transform = Transform3D(0.71194, 0.427709, -0.556963, -0.514978, 0.857203, 0, 0.47743, 0.286824, 0.830538, 4.27836, 0, -92.5158)
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("12_d2ohv")]
+transform = Transform3D(0.282911, 0, 0.959146, 0.490117, 0.859585, -0.144565, -0.824468, 0.510993, 0.243186, -3.42769, 24.361, -205.462)
+
+[node name="Platform5" parent="Platforms" instance=ExtResource("12_d2ohv")]
+transform = Transform3D(0.034803, -0.95517, 0.294005, 0.785154, 0.208143, 0.583275, -0.618322, 0.21054, 0.757199, 7.29745, 103.861, -265.422)
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("12_d2ohv")]
+transform = Transform3D(-0.336057, -0.663082, -0.66887, 0.112, -0.733268, 0.670652, -0.935159, 0.150464, 0.320685, 7.29745, 124.201, -294.906)
+
+[node name="VoidPlatform2" parent="Platforms" instance=ExtResource("9_f1l1s")]
+transform = Transform3D(0.786967, 0, -0.616995, 0, 1, 0, 0.616995, 0, 0.786967, -17.2432, 123.756, -326.965)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("8_dlnn4")]
+transform = Transform3D(0.838984, 0, -0.544156, 0, 1, 0, 0.544156, 0, 0.838984, -77.157, 122.425, -371.112)
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("11_ftejf")]
+transform = Transform3D(0.895096, 0.402604, 0.191607, -0.231217, 0.0516895, 0.971528, 0.381237, -0.913914, 0.139356, -121.053, 126.029, -393.566)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("10_6jfk0")]
+transform = Transform3D(0.861772, -0.056431, 0.504147, -0.0918191, -0.99473, 0.0456091, 0.498916, -0.0855949, -0.862413, -135.782, 136.006, -405.308)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("12_d2ohv")]
+transform = Transform3D(0.903603, -0.413003, -0.113711, -0.0421677, 0.178404, -0.983053, 0.42629, 0.893085, 0.143791, -161.291, 133.76, -423.556)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("8_dlnn4")]
+transform = Transform3D(-0.856582, 0, 0.51601, 0, 1, 0, -0.51601, 0, -0.856582, -212.091, 129.569, -448.703)
+
+[node name="WinArea" type="Area3D" parent="Platforms/Platform12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platforms/Platform12/WinArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.57611, 0, 0.670837)
+shape = SubResource("SphereShape3D_1xuon")
+
+[node name="LevelPath" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.868291, 0)
+curve = SubResource("Curve3D_d2ohv")
+
+[node name="DesertionChecker" type="Timer" parent="."]
+autostart = true
+
+[node name="EnemyUFO" parent="." instance=ExtResource("13_1xuon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85372, 6.27848, -51.3398)
+
+[node name="EnemyUFO2" parent="." instance=ExtResource("13_1xuon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.85372, 37.8552, -224.029)
+
+[connection signal="body_entered" from="Platforms/Platform12/WinArea" to="." method="_on_win_area_body_entered"]
+[connection signal="timeout" from="DesertionChecker" to="." method="_on_desertion_checker_timeout"]

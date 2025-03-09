@@ -1,0 +1,130 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8oess8ivl13w"]
+
+[ext_resource type="Script" uid="uid://ioq55vp06kna" path="res://Source/ui/main_menu.gd" id="1_1yvyc"]
+[ext_resource type="FontFile" uid="uid://b0ew3p0ayuglx" path="res://Resources/Fonts/stoNe.ttf" id="1_vtx7h"]
+[ext_resource type="FontFile" uid="uid://clojhv4cfuhqq" path="res://Resources/Fonts/airstrip.ttf" id="2_oxjc5"]
+[ext_resource type="AudioStream" uid="uid://cp6lo1unsstu6" path="res://Resources/Audio/Music/MainMusic.mp3" id="3_ujvsv"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_oxjc5"]
+fade_time = 0.0
+stream_count = 1
+stream_0 = ExtResource("3_ujvsv")
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+script = ExtResource("1_1yvyc")
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="Main"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vtx7h")
+theme_override_font_sizes/font_size = 120
+text = "Space Rave"
+
+[node name="ButtonHowToPlay" type="Button" parent="Main"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oxjc5")
+theme_override_font_sizes/font_size = 50
+text = "How to play?"
+
+[node name="ButtonPlay" type="Button" parent="Main"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oxjc5")
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="ButtonCredits" type="Button" parent="Main"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oxjc5")
+theme_override_font_sizes/font_size = 50
+text = "Credits
+"
+
+[node name="HowToPlay" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="HowToPlay"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vtx7h")
+theme_override_font_sizes/font_size = 100
+text = "How to play?"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlay"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_oxjc5")
+theme_override_font_sizes/normal_font_size = 40
+text = "Navigate the map with your Magno-Boots. They keep you attached to all sorts of surfaces, regardless of their rotation. When not attached to a panel, you can use up to three charges to dash (Q = left, E = right, RMB = forward).
+Use LMB to deflect enemy bullets or slice them when close enough. UFO drones try to destroy you. good luck."
+fit_content = true
+
+[node name="ButtonBack" type="Button" parent="HowToPlay"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oxjc5")
+theme_override_font_sizes/font_size = 50
+text = "back to main menu"
+
+[node name="Credits" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_vtx7h")
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_oxjc5")
+theme_override_fonts/bold_font = ExtResource("2_oxjc5")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "game design, 3D art, animation and programming:
+	[b]Sam Oakwood[/b] aka. trySam
+sound and music (creative commons 0):
+	[b]freesound.org, opengameart.org[/b]
+fonts:
+	[b]dafont.com, adobe fonts[/b]
+engine:
+	[b]Godot Engine v4.4.stable.official[/b]"
+fit_content = true
+
+[node name="ButtonBack" type="Button" parent="Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oxjc5")
+theme_override_font_sizes/font_size = 50
+text = "back to main menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_oxjc5")
+autoplay = true
+
+[connection signal="pressed" from="Main/ButtonHowToPlay" to="." method="_on_button_how_to_play_pressed"]
+[connection signal="pressed" from="Main/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Main/ButtonCredits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="HowToPlay/ButtonBack" to="." method="_on_button_back_pressed"]
+[connection signal="pressed" from="Credits/ButtonBack" to="." method="_on_button_back_pressed"]

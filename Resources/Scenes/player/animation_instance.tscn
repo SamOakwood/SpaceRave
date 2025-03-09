@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx1icbr8rsjsc"]
+
+[ext_resource type="PackedScene" uid="uid://bwnkbb5uxbp4c" path="res://Resources/Scenes/player/animation.glb" id="1_jfic2"]
+[ext_resource type="Script" uid="uid://c2ges6qwk2u3q" path="res://Source/player/animation.gd" id="2_oehvw"]
+[ext_resource type="AnimationNodeStateMachine" uid="uid://dui5r65ivfwy" path="res://Resources/Animations/Player/STATE_MACHINE.tres" id="3_silup"]
+[ext_resource type="SpriteFrames" uid="uid://b6yg6vtpxbsl0" path="res://Resources/Materials/Player/sword_frames.tres" id="3_vrfyg"]
+[ext_resource type="AudioStream" uid="uid://bu5d1hjiacu8k" path="res://Resources/Audio/Player/electricity.mp3" id="4_ocvor"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_ny8dq"]
+fade_time = 0.5
+stream_count = 1
+stream_0 = ExtResource("4_ocvor")
+
+[node name="animation" instance=ExtResource("1_jfic2")]
+script = ExtResource("2_oehvw")
+
+[node name="Skeleton3D" parent="FPArmature" index="0"]
+bones/0/rotation = Quaternion(0.244323, 0.00588268, -0.916735, 0.316019)
+bones/1/rotation = Quaternion(-0.564473, 0.00341714, -0.239463, 0.789947)
+bones/2/rotation = Quaternion(0.0356204, 0.30176, 0.893679, 0.330167)
+bones/3/rotation = Quaternion(-0.735878, -0.00259915, 0.312178, 0.600851)
+bones/4/position = Vector3(-0.871974, -1.26088, -0.273279)
+bones/4/rotation = Quaternion(0.272955, -0.327343, 0.680362, 0.596196)
+bones/6/rotation = Quaternion(-0.313018, 0.0139721, 0.00452947, 0.949634)
+bones/7/rotation = Quaternion(-0.0468716, -0.00127952, 0.00290462, 0.998896)
+bones/8/rotation = Quaternion(0.0243858, -0.0111292, 0.0458504, 0.998589)
+bones/9/rotation = Quaternion(-0.106143, -0.00048702, -0.0110358, 0.99429)
+bones/10/rotation = Quaternion(-0.0155026, 0.000257712, -0.00407028, 0.999872)
+bones/11/rotation = Quaternion(0.0122879, -0.000784156, 0.0552215, 0.998398)
+bones/12/rotation = Quaternion(-0.0652678, -0.000146073, -0.0210826, 0.997645)
+bones/13/rotation = Quaternion(0.0115653, -6.53162e-05, 0.00359162, 0.999927)
+bones/14/rotation = Quaternion(0.0203986, -0.000606114, 0.0204453, 0.999583)
+bones/15/rotation = Quaternion(-0.0362022, 0.00207391, -0.0180969, 0.999179)
+bones/16/rotation = Quaternion(0.0136644, -7.73964e-05, -0.00300609, 0.999902)
+bones/17/rotation = Quaternion(0.0392846, -0.00164462, 0.0391302, 0.99846)
+bones/18/rotation = Quaternion(-0.0154158, 0.00416548, -0.0268252, 0.999513)
+bones/19/rotation = Quaternion(-0.00910144, -0.000979623, 0.0235259, 0.999681)
+bones/20/rotation = Quaternion(-0.0264056, 0.00140611, 0.0201267, 0.999448)
+bones/21/position = Vector3(1.16644, -1.26185, -0.62808)
+bones/21/rotation = Quaternion(0.201733, 0.491614, -0.732335, 0.425799)
+bones/23/rotation = Quaternion(-0.599093, -0.00565862, -0.357612, 0.716358)
+bones/24/rotation = Quaternion(0.278509, -0.358658, -0.313237, 0.834074)
+bones/25/rotation = Quaternion(0.0380606, -0.310095, -0.39033, 0.866046)
+bones/26/rotation = Quaternion(-0.125597, -0.0168353, -0.590648, 0.796917)
+bones/27/rotation = Quaternion(-0.0122508, -0.0095034, -0.596382, 0.802551)
+bones/28/rotation = Quaternion(-0.0415246, -0.00282957, -0.338987, 0.93987)
+bones/29/rotation = Quaternion(-0.0458483, -0.0489056, -0.723373, 0.687196)
+bones/30/rotation = Quaternion(0.00773876, 0.00859484, -0.741721, 0.670609)
+bones/31/rotation = Quaternion(-0.0858507, 0.0853931, -0.463408, 0.877833)
+bones/32/rotation = Quaternion(0.0146267, -0.0377671, -0.67169, 0.739724)
+bones/33/rotation = Quaternion(0.00988891, 0.00943029, -0.683762, 0.729577)
+bones/34/rotation = Quaternion(0.0993535, -0.148075, -0.339622, 0.923504)
+bones/35/rotation = Quaternion(0.0844312, 0.00747366, -0.567768, 0.818813)
+bones/36/rotation = Quaternion(0.0287973, 0.0190898, -0.673602, 0.738286)
+bones/37/rotation = Quaternion(0.0674936, -0.203127, -0.320587, 0.922718)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="FPArmature/Skeleton3D" index="2"]
+transform = Transform3D(-0.211481, -0.148713, 0.966002, -0.492672, 0.869825, 0.0260495, -0.844127, -0.470413, -0.257218, 1.01826, -1.46596, -0.646436)
+bone_name = "Sword"
+bone_idx = 38
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="FPArmature/Skeleton3D/BoneAttachment3D" index="0"]
+transform = Transform3D(-0.0754881, -0.000820629, -0.0151618, -0.000482744, 0.0769783, -0.00176293, 0.0151763, -0.00163326, -0.0754719, 0.00129043, 1.3742, 0.0111158)
+sprite_frames = ExtResource("3_vrfyg")
+autoplay = "default"
+frame_progress = 0.493057
+
+[node name="ShockAudioPlayer" type="AudioStreamPlayer3D" parent="FPArmature/Skeleton3D/BoneAttachment3D" index="1"]
+transform = Transform3D(-0.316046, -0.038638, -0.947957, 0.126869, 0.988476, -0.0825874, 0.940223, -0.146368, -0.307501, 0.0983813, 1.21566, 0.025507)
+volume_db = -10.0
+
+[node name="ElectricityPlayer" type="AudioStreamPlayer3D" parent="FPArmature/Skeleton3D/BoneAttachment3D" index="2"]
+transform = Transform3D(-0.316046, -0.038638, -0.947957, 0.126869, 0.988476, -0.0825874, 0.940223, -0.146368, -0.307501, 0.0983813, 1.21566, 0.025507)
+stream = SubResource("AudioStreamPlaylist_ny8dq")
+volume_db = -5.0
+max_db = 0.0
+autoplay = true
+doppler_tracking = 2
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = ExtResource("3_silup")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/has_landed = false
+parameters/conditions/is_idling = false
+parameters/conditions/is_swinging = false
+parameters/conditions/is_walking = false
+parameters/IdleTree/IdleTransition/current_state = "Idle"
+parameters/IdleTree/IdleTransition/transition_request = ""
+parameters/IdleTree/IdleTransition/current_index = 0
+parameters/SwingTree/SwingTransition/current_state = "SwingBW"
+parameters/SwingTree/SwingTransition/transition_request = ""
+parameters/SwingTree/SwingTransition/current_index = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+max_db = -5.0
