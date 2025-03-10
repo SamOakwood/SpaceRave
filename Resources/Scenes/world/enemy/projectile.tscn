@@ -40,7 +40,6 @@ volume_db = -13.913
 max_db = 0.0
 pitch_scale = 0.5
 autoplay = true
-doppler_tracking = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DeletionTimer" to="." method="_on_deletion_timer_timeout"]

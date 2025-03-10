@@ -3,7 +3,7 @@ class_name Projectile
 
 var is_hostile:bool = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	global_position -= global_basis.z
 
 func _on_deletion_timer_timeout() -> void:

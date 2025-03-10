@@ -16,7 +16,6 @@ var acceleration:float = 1.0
 var is_deflecting:bool = false
 
 var attached_platform:Platform
-var direction:Vector3
 var local_velocity:Vector3 = Vector3.ZERO
 var last_velocity:Vector3 = velocity
 var charges:int = 3
@@ -196,8 +195,10 @@ func _on_play_again_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 	
-func win() -> void:
+func win(time:float) -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	$CanvasLayer/WinOL/VBoxContainer/TimeText.text = "Your Time: "+str(snapped(time/1000, 0.01))+"s"
 	$CanvasLayer/WinOL.show()
+	
 	get_tree().paused = true
 	

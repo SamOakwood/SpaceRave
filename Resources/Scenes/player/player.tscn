@@ -41,44 +41,19 @@ shape = SubResource("CapsuleShape3D_brtp2")
 [node name="CamHead" type="Node3D" parent="Gimbal"]
 
 [node name="Camera3D" type="Camera3D" parent="Gimbal/CamHead"]
-doppler_tracking = 2
 fov = 92.0
 far = 200.0
 
 [node name="animation" parent="Gimbal/CamHead/Camera3D" instance=ExtResource("2_0uhm2")]
 
 [node name="Skeleton3D" parent="Gimbal/CamHead/Camera3D/animation/FPArmature" index="0"]
-bones/0/rotation = Quaternion(0.261461, 0.267504, -0.787948, 0.489099)
-bones/1/rotation = Quaternion(-0.493442, 0.00365181, -0.20933, 0.844205)
-bones/2/rotation = Quaternion(0.00737185, 0.00182886, 0.695182, 0.718794)
-bones/3/rotation = Quaternion(-0.0833241, -0.00430793, 0.0353482, 0.995886)
-bones/4/position = Vector3(-1.86505, -0.532897, -0.287921)
-bones/4/rotation = Quaternion(7.02719e-08, -0.0814721, 0, 0.996676)
-bones/6/rotation = Quaternion(-0.313018, 0.0139721, 0.00452948, 0.949634)
-bones/7/rotation = Quaternion(-0.0468716, -0.00127951, 0.0029046, 0.998896)
-bones/9/rotation = Quaternion(-0.106143, -0.00048702, -0.0110357, 0.99429)
-bones/10/rotation = Quaternion(-0.0155026, 0.000257707, -0.00407026, 0.999872)
-bones/11/rotation = Quaternion(0.012288, -0.00078415, 0.0552215, 0.998398)
-bones/12/rotation = Quaternion(-0.0652678, -0.000146078, -0.0210826, 0.997645)
-bones/13/rotation = Quaternion(0.0115653, -6.53173e-05, 0.00359163, 0.999927)
-bones/14/rotation = Quaternion(0.0203986, -0.000606104, 0.0204454, 0.999583)
-bones/16/rotation = Quaternion(0.0136644, -7.73914e-05, -0.00300613, 0.999902)
-bones/19/rotation = Quaternion(-0.00910145, -0.000979618, 0.023526, 0.999681)
-bones/21/position = Vector3(1.45587, -0.705043, -0.843787)
-bones/21/rotation = Quaternion(0.340275, 0.601414, -0.66919, 0.273312)
-bones/23/rotation = Quaternion(-0.599093, -0.00565857, -0.357612, 0.716358)
-bones/25/rotation = Quaternion(0.0380605, -0.310095, -0.39033, 0.866046)
-bones/26/rotation = Quaternion(-0.125597, -0.0168354, -0.590648, 0.796917)
-bones/27/rotation = Quaternion(-0.0122509, -0.00950338, -0.596382, 0.802551)
-bones/28/rotation = Quaternion(-0.0415245, -0.00282957, -0.338987, 0.93987)
-bones/30/rotation = Quaternion(0.00773877, 0.00859485, -0.741721, 0.670609)
-bones/32/rotation = Quaternion(0.0146267, -0.0377671, -0.671691, 0.739724)
-bones/34/rotation = Quaternion(0.0993536, -0.148075, -0.339622, 0.923504)
-bones/35/rotation = Quaternion(0.0844311, 0.00747366, -0.567768, 0.818813)
-bones/36/rotation = Quaternion(0.0287972, 0.0190898, -0.673602, 0.738286)
+bones/0/rotation = Quaternion(0.2527, 0.255618, -0.797682, 0.484258)
+bones/1/rotation = Quaternion(-0.485479, 0.00367531, -0.205952, 0.849635)
+bones/21/position = Vector3(1.45552, -0.746291, -0.843787)
+bones/21/rotation = Quaternion(0.334204, 0.603776, -0.660325, 0.296199)
 
 [node name="BoneAttachment3D" parent="Gimbal/CamHead/Camera3D/animation/FPArmature/Skeleton3D" index="2"]
-transform = Transform3D(-0.29869, 0.0976981, 0.949336, -0.0514815, 0.991648, -0.11825, -0.952961, -0.0841933, -0.291166, 1.26105, -0.841274, -0.930027)
+transform = Transform3D(-0.272918, 0.0556726, 0.960425, -0.0690216, 0.994618, -0.0772681, -0.959558, -0.0873779, -0.267607, 1.26907, -0.891435, -0.933918)
 
 [node name="AnimatedSprite3D" parent="Gimbal/CamHead/Camera3D/animation/FPArmature/Skeleton3D/BoneAttachment3D" index="0"]
 frame_progress = 0.105037
@@ -131,6 +106,8 @@ size_flags_vertical = 4
 [node name="GameOverText" type="Label" parent="DeadOL/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_ejyiv")
 theme_override_font_sizes/font_size = 126
 text = "Game Over!"
@@ -138,6 +115,8 @@ text = "Game Over!"
 [node name="ReasonText" type="Label" parent="DeadOL/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_ym0qn")
 theme_override_font_sizes/font_size = 50
 text = "You died!"
@@ -252,9 +231,20 @@ theme_override_constants/separation = 45
 [node name="GameOverText" type="Label" parent="CanvasLayer/WinOL/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_ejyiv")
 theme_override_font_sizes/font_size = 126
 text = "You Won!"
+
+[node name="TimeText" type="Label" parent="CanvasLayer/WinOL/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_ym0qn")
+theme_override_font_sizes/font_size = 30
+text = "Your Time: "
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/WinOL/VBoxContainer"]
 process_mode = 3

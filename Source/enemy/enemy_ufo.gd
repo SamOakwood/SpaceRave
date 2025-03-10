@@ -9,14 +9,7 @@ var player_inside:Player = null
 @onready
 var bullet_scene = preload("res://Resources/Scenes/world/enemy/projectile.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func die():
 	collision_layer = 0
@@ -34,6 +27,7 @@ func die():
 					aabb_center = mi.get_aabb().get_center()
 			rb3d.apply_impulse(aabb_center.normalized()*15)
 	$PostDeathTimer.start()
+	
 	$AnimationPlayer.play("charged", -1, -1, false)
 	$ChargeSound.stop()
 	player_inside = null
@@ -43,6 +37,8 @@ func _on_post_death_timer_timeout() -> void:
 	queue_free()
 
 func shoot():
+	if not $Ufo.visible:
+		return
 	$ShootSound.play()
 	$AnimationPlayer.play("RESET")
 	if player_inside != null:

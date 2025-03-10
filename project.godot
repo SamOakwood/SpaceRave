@@ -11,10 +11,18 @@ config_version=5
 [application]
 
 config/name="Space Rave"
-run/main_scene="uid://cg4ewun4b3hdi"
+run/main_scene="uid://b8oess8ivl13w"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="uid://c13lo3q8fu88w"
+
+[audio]
+
+general/default_playback_type.web=0
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [global_group]
 

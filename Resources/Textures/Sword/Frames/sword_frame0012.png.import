@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlpk6p3lipbfe"
 path.s3tc="res://.godot/imported/sword_frame0012.png-0d6ed58346eb7c96dc4841065a12e79e.s3tc.ctex"
+path.etc2="res://.godot/imported/sword_frame0012.png-0d6ed58346eb7c96dc4841065a12e79e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Resources/Textures/Sword/Frames/sword_frame0012.png"
-dest_files=["res://.godot/imported/sword_frame0012.png-0d6ed58346eb7c96dc4841065a12e79e.s3tc.ctex"]
+dest_files=["res://.godot/imported/sword_frame0012.png-0d6ed58346eb7c96dc4841065a12e79e.s3tc.ctex", "res://.godot/imported/sword_frame0012.png-0d6ed58346eb7c96dc4841065a12e79e.etc2.ctex"]
 
 [params]
 
